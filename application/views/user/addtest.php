@@ -16,17 +16,12 @@
                     'id' => 'myform',
                     'role'=>'form');
 
-                 echo form_open('', $attributes);
+                 echo form_open_multipart('', $attributes);
 
-//     echo form_open('email/send', 'class="form-horizontal" role="form" ');
-//echo form_open_multipart('email/send');
-
-//  $hidden = array('username' => 'Joe', 'member_id' => '234');
-//  echo form_open('email/send', '', $hidden);
                   ?>
               <div class="box-body">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Email address</label>
+                  <label for="exampleInputEmail1">username</label>
                 
                 <?php 
                   $attributes_ = array(
@@ -41,38 +36,28 @@
                 ?>            
                 
                 </div>
+               
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
+                  <label for="exampleInputPassword1">CNIC</label>
                   <?php 
-                  $attributes_ = array(
+                  $attributes_email = array(
                     'class' => 'form-control',
-                    'id' => 'exampleInputPassword1',
-                    'placeholder'=>'Enter password',
+                   
+                    'placeholder'=>'Enter cnic',
                    
                   );
 
-                echo form_input("password",set_value('password'),$attributes_);
+                echo form_input("cnic",set_value('cnic'),$attributes_email);
+                echo form_error("cnic","","");
                 ?>
                 </div>
 
-
+               
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Password</label>
-                  <?php 
-                  $attributes_ = array(
-                    'class' => 'form-control',
-                    'id' => 'exampleInputPassword1',
-                    'placeholder'=>'Enter password Confirmation',
-                   
-                  );
-
-                echo form_input("passconf",set_value('passconf'),$attributes_);
-                ?>
-                </div>
-                <!-- <div class="form-group">
                   <label for="exampleInputFile">File input</label>
-                  <input type="file" id="exampleInputFile">
-
+                  <input type="file" name="userfile" id="exampleInputFile">
+                  </div>
+<!-- 
                   <p class="help-block">Example block-level help text here.</p>
                 </div>
                 <div class="checkbox">

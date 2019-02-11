@@ -1,28 +1,80 @@
-<!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <h1>
-        Page Header
-        <small>Optional description</small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
-        <li class="active">Here</li>
-      </ol>
-    </section>
+<section class="content">
+      <div class="row">
+        <!-- left column -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">Quick Example</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <?php //echo validation_errors('<div class="alert alert-danger">','</div>'); ?>
+                  <?php   
+                  $attributes = array(
+                    'class' => 'email',
+                    'id' => 'myform',
+                    'role'=>'form');
 
-    <!-- Main content -->
-    <section class="content container-fluid">
+                 echo form_open_multipart('', $attributes);
 
-      <!--------------------------
-        | Your Page Content Here |
-        -------------------------->
+                  ?>
+                <div class="box-body">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Username</label>
+                      <?php 
+                        $attributes_ = array(
+                          'class' => 'form-control',
+                          'id' => 'exampleInputUsername',
+                          'placeholder'=>'Enter Username',
+                        
+                        );
+
+                      echo form_input("username",set_value('username'),$attributes_);
+                      echo form_error("username","","");
+                      ?>            
+                    </div>
 
 
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">CNIC</label>
+                      <?php 
+                        $attributes_ = array(
+                          'class' => 'form-control',
+                          'id' => 'exampleInputcnic',
+                          'placeholder'=>'Enter CNIC',
+                        
+                        );
 
+                      echo form_input("cnic",set_value('cnic'),$attributes_);
+                      echo form_error("cnic","","");
+                      ?>            
+                    </div>
+                 
+                    <div class="form-group">
+                    <label for="exampleInputEmail1">File</label>
+                     <input type="file" name="userfile" >
+                    </div>
+                 
+                 
+                 
+                  </div>
+              
+              
+              
+              <!-- /.box-body -->
 
-    </section>
-    <!-- /.content -->
-  </div>
-  <!-- /.content-wrapper -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            
+            <?php echo form_close();?>
+          </div>
+          <!-- /.box -->
+
+       
+
+        </div>
+        <!--/.col (left) -->
+</div>
+</div>
