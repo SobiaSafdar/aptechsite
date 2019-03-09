@@ -6,9 +6,17 @@ class Admin extends CI_Controller {
 	
 	public function index()
 	{
-		$data['content'] = $this->load->view('dashboard', '', true);
-		$this->load->view('template',$data);
-	}
+		if($this->session->userdata("username"))
+		{
+			$data['content'] = $this->load->view('dashboard', '', true);
+			$this->load->view('template',$data);
+						
+		}
+	else{
+
+			redirect('login');
+		}
+}
 	
 	public function dashboard()
 	{
